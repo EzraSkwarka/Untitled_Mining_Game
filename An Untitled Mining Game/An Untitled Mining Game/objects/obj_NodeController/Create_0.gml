@@ -58,3 +58,5 @@ enum node_rarity {
 	rare		= 2,
 	ultrarare	= 3
 }
+
+obj_item_clump_list = ds_list_create();

@@ -31,6 +31,7 @@ function scr_mob_left_click(_self)
 							var inst = instance_create_layer(x, y, "Active", obj_item);
 							with (inst) {
 								item_num = _self.drop_array[@_i];
+								//item_amount = 2;
 								x_frame = item_num mod (spr_width/cell_size);
 								y_frame = item_num div (spr_width/cell_size);
 							}

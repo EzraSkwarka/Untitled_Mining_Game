@@ -10,7 +10,7 @@ spr_width = sprite_get_width(item_spr);
 // Info for subsprite
 //----------
 item_num = 0;
-item_amount = 1;
+item_amount = 2;
 x_frame = 0;
 y_frame = 0;
 
@@ -31,4 +31,5 @@ y_goal = y + lengthdir_y(len, itemdir);;
 
 lerp_speed = .15;
 dectition_radius = 32;
+self_mag_radius = 128;
 pickup_radius = 4;
