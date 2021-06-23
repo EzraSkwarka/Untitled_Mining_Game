@@ -36,7 +36,8 @@ function scr_node_left_click(_self)
 									item_num = _self.drop_array[@_i];
 									item_amount = basket_size;
 									if (remainder > 0) {
-										item_amount++;	
+										item_amount++;
+										remainder--;
 									}
 									x_frame = item_num mod (spr_width/cell_size);
 									y_frame = item_num div (spr_width/cell_size);

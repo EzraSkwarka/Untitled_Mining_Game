@@ -1,3 +1,4 @@
+event_inherited();
 //Set on spawn
 _health = 1;
 max_health = 1;

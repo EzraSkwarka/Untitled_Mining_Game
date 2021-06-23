@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Backstage",
-    "path": "folders/Objects/GUI Objects/Backstage.yy",
+    "path": "folders/Objects/!Metaobjects/Backstage.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_relics_menu",

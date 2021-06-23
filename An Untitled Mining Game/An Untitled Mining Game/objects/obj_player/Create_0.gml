@@ -1,3 +1,4 @@
+event_inherited();
 //while the collision issues persist, marking player as non-solid
 spd = 2
 
