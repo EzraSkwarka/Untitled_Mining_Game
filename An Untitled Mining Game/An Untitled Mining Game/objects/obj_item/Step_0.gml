@@ -11,7 +11,7 @@ if (drop_move) { //inital Spawn
 	}
 } else {
 
-	
+	#region Move To PLayer
 	
 	var px = obj_player.x;
 	var py = obj_player.y;
@@ -85,42 +85,38 @@ if (drop_move) { //inital Spawn
 		
 	
 	}
-	
-	//clump together
-	//var _other = instance_nearest(x, y, obj_item)
-	lerp_speed = .01;
-	collision_rectangle_list(
-		x - self_mag_radius/2, y - self_mag_radius/2, 
-		x + self_mag_radius/2, y + self_mag_radius/2, 
-		obj_item, false, true, obj_NodeController.obj_item_clump_list, false);
+	#endregion
+	 else {
+	#region Clump Together
+		lerp_speed = .05;
+		collision_rectangle_list(
+			x - self_mag_radius/2, y - self_mag_radius/2, 
+			x + self_mag_radius/2, y + self_mag_radius/2, 
+			obj_item, false, true, obj_NodeController.obj_item_clump_list, true);
 		
-	var _i = 0; repeat(ds_list_size(obj_NodeController.obj_item_clump_list)) {
-		var _other = obj_NodeController.obj_item_clump_list[| _i];
-		if(	(x_frame == _other.x_frame) 
-		and (y_frame == _other.y_frame) 
-		and !(_other.drop_move) 
-		) {
-			show_debug_message("Item Num: " + string(item_num))
-				if (abs(x - _other.x) > 1) {
-					show_debug_message("X Bad")
-					x = floor(lerp(x, _other.x, lerp_speed));
-					_other.x = floor(lerp(_other.x, x, lerp_speed));
+		var _i = 0; repeat(ds_list_size(obj_NodeController.obj_item_clump_list)) {
+			var _other = obj_NodeController.obj_item_clump_list[| _i];
+			if(	(item_num == _other.item_num) 
+			and !(_other.drop_move) 
+			) {
+				if (abs(x - _other.x) >= 1) {
+					x = (lerp(x, _other.x, lerp_speed));
+					_other.x = (lerp(_other.x, x, lerp_speed));
 				}
-				if (abs(y - _other.y) > 1) {
-					show_debug_message("Y Bad")
-					_other.y = floor(lerp(_other.y, y, lerp_speed));
-					y = floor(lerp(y, _other.y, lerp_speed));
+				if (abs(y - _other.y) >= 1) {
+					_other.y = (lerp(_other.y, y, lerp_speed));
+					y = (lerp(y, _other.y, lerp_speed));
 				}
 				if ((abs(x - _other.x) <= pickup_radius) and 
 					(abs(y - _other.y) <= pickup_radius)) {
 					_other.item_amount += item_amount;
 					item_amount = 0;
 				}
+			}
 		}
-	}
-	ds_list_clear(obj_NodeController.obj_item_clump_list);
-	
-	
+		ds_list_clear(obj_NodeController.obj_item_clump_list);
+	 }	
+	#endregion
 }
 
 if (item_amount <= 0) {
