@@ -31,4 +31,5 @@ y_goal = y + lengthdir_y(len, itemdir);;
 
 lerp_speed = .15;
 dectition_radius = 32;
+self_mag_radius = 128;
 pickup_radius = 4;

@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_tiny_col_mask",
+    "path": "sprites/spr_tiny_col_mask/spr_tiny_col_mask.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

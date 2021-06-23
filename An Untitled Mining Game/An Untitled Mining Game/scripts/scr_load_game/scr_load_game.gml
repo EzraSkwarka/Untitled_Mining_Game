@@ -139,8 +139,8 @@ if (file_exists("savegame.sav")) {
 						y_frame = load_entity.y_frame; }
 					if (variable_instance_exists(load_entity, "dir")) {
 						dir = load_entity.dir; }
-					if (variable_instance_exists(load_entity, "health")) {
-						health = load_entity.health; }
+					if (variable_instance_exists(load_entity, "_health")) {
+						health = load_entity._health; }
 					if (variable_instance_exists(load_entity, "health_timer")) {
 						health_timer = load_entity.health_timer; }
 					if (variable_instance_exists(load_entity, "health_timer_threshold")) {
@@ -171,8 +171,8 @@ if (file_exists("savegame.sav")) {
 					//-----Relics
 					case "obj_relics_menu":
 					#region
-						if (variable_instance_exists(load_entity, "global")) {
-							global = load_entity.global; }
+						if (variable_instance_exists(load_entity, "renown")) {
+							global.renown = load_entity.renown; }
 						if (variable_instance_exists(load_entity, "pick_power")) {
 							pick_power = load_entity.pick_power; }
 						if (variable_instance_exists(load_entity, "bonus_inv_slots")) {
