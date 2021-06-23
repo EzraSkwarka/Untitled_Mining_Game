@@ -1,3 +1,4 @@
+event_inherited();
 selected_tool = 0;
 scale = 1;
 

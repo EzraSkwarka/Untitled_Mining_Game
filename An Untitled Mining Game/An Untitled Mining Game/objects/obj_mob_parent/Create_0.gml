@@ -1,3 +1,4 @@
+event_inherited();
 state = mob_states.idle;
 
 states_array = [

@@ -31,3 +31,4 @@ instance_create_layer(0, 0, "UI", obj_struct_spawner);
 instance_create_layer(0, 0, "UI", obj_SaveTracker);
 instance_create_layer(0, 0, "UI", obj_MenuBuilder);
 instance_create_layer(0, 0, "UI", obj_NodeController);
+instance_create_layer(0, 0, "UI", obj_depthsorter);

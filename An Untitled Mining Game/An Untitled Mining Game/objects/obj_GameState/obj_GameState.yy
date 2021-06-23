@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI Objects",
-    "path": "folders/Objects/GUI Objects.yy",
+    "name": "!Metaobjects",
+    "path": "folders/Objects/!Metaobjects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_GameState",
