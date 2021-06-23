@@ -10,7 +10,7 @@ spr_width = sprite_get_width(item_spr);
 // Info for subsprite
 //----------
 item_num = 0;
-item_amount = 2;
+item_amount = 1;
 x_frame = 0;
 y_frame = 0;
 
