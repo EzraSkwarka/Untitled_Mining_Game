@@ -7,6 +7,8 @@ if (item_amount > 1) {
 					 
 }
 
+exit;
+//debug
 draw_rectangle(
 				x - self_mag_radius/2, y - self_mag_radius/2, 
 				x + self_mag_radius/2, y + self_mag_radius/2, 
