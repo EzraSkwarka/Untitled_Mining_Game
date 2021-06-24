@@ -19,9 +19,9 @@ if (!building) {
 	
 	// Determine active struct
 	switch (selected_struct) {
-		case struct.pebble_refiner:
-			active_sprite = spr_struct_pebble_refiner;
-			active_object = struct.pebble_refiner
+		case struct.furnace:
+			active_sprite = spr_struct_furnace;
+			active_object = struct.furnace
 			required_mats = [item.rock, 10];
 			col_width = 30;
 			col_height = 22;

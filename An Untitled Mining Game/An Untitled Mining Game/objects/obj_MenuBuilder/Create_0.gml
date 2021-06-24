@@ -15,7 +15,7 @@ button_update_ref_list = ds_list_create();
 
 enum menu_type {
 	none,
-	pebble_refiner,
+	furnace,
 	mouse_tool,
 	points_shop
 }

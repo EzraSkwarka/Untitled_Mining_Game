@@ -42,7 +42,7 @@ slots_y = inv_UI_y + (40 * scale);
 //---------Items
 enum struct {
 	none,
-	pebble_refiner,
+	furnace,
 	mouse_tool,
 	points_shop,
 	height

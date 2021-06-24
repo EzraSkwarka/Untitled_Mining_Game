@@ -6,9 +6,9 @@ var _struct = instance_create_layer(x_cord, y_cord, "Active", obj_structure_pare
 
 with _struct {
 	switch struct_type {
-		case struct.pebble_refiner:
-			draw_spr = spr_struct_pebble_refiner;
-			draw_menu = menu_type.pebble_refiner;
+		case struct.furnace:
+			draw_spr = spr_struct_furnace;
+			draw_menu = menu_type.furnace;
 			break;
 		case struct.points_shop:
 			draw_spr = spr_struct_points_shop;

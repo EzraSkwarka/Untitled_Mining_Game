@@ -8,7 +8,7 @@ if global.is_paused {
 
 //Build Menu
 switch (menu_to_draw) {
-	case menu_type.pebble_refiner:
+	case menu_type.furnace:
 		if !(menu_drawn) {
 			Recipes = [
 			// [Recipe Name, [Input Array], [Output Array], Base Crafting Time, 
