@@ -14,6 +14,7 @@ y_frame = 0;
 dir = 0;
 
 health = 3;
+max_health = 5;
 health_timer = 0;
 health_timer_threshold = 180;
 i_frames = 20;

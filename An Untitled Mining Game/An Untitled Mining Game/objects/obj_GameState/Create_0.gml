@@ -1,6 +1,14 @@
 //I want more randomness
 randomize()
 
+//Health drawing
+enum heart {
+	full,
+	half,
+	empty
+}
+scale_timer = 0;
+
 global.mouse_level = 0;
 global.renown = 0;
 global.is_paused = false;
