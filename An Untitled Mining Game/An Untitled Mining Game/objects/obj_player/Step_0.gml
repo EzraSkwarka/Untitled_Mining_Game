@@ -7,7 +7,7 @@ if (i_frames_remaning > 0) {
 
 if (health <= 0) {scr_load_game(); exit;}
 
-if (health < 5) {
+if (health < max_health	) {
 	health_timer++;
 	if (health_timer >= health_timer_threshold) {
 		health += 1;
