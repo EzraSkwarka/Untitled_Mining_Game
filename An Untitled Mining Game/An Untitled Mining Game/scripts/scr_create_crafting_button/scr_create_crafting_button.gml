@@ -18,6 +18,7 @@ with (button) {
 	x_loc = struct_refrence.x;
 	y_loc = struct_refrence.y;
 	crafting_time = recipe[3];
+	dynamic = recipe[6];
 	
 	
 }

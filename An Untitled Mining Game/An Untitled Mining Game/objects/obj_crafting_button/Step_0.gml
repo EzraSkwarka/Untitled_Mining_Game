@@ -10,6 +10,7 @@ if (_hover and click) {
 	obj_MenuBuilder.input = input;
 	obj_MenuBuilder.output = output;
 	obj_MenuBuilder.crafting_time = crafting_time;
+	obj_MenuBuilder.dynamic = dynamic;
 	obj_MenuBuilder.draw_craft = true;
 	
 }

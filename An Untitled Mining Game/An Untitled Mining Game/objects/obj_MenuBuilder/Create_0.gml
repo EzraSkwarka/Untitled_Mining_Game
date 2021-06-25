@@ -27,6 +27,7 @@ input = 0;
 output = 0;
 crafting_time = 0;
 item_amount = 1;
+dynamic = false;
 
 
 //GUI settings

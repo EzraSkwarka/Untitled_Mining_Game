@@ -76,7 +76,7 @@ switch (menu_to_draw) {
 			//Level Up Button
 				//Cost
 				Recipes[@ array_length(Recipes) - 1][@ 1][@ 1] = floor(power(1.1, struct_refrence.structure_level))
-					button_update_ref_list[| 0].input = Recipes[@ 0][@ 1];
+					button_update_ref_list[| 0].input[@ 1] = Recipes[@ 0][@ 1][@ 1];
 				//Time
 				Recipes[@ array_length(Recipes) - 1][@ 3] = 60 * struct_refrence.structure_level;
 					button_update_ref_list[| 0].crafting_time = Recipes[@ 0][@ 3];
@@ -114,7 +114,7 @@ switch (menu_to_draw) {
 		//Level Up Button
 			//Cost
 			Recipes[@ 0][@ 1][@ 1] = floor(power(1.1, scr_get_mouse_level()));
-				button_update_ref_list[|0 ].input = Recipes[@ 0][@ 1];
+				button_update_ref_list[| 0].input[@ 1] = Recipes[@ 0][@ 1][@ 1];
 			//Time
 			Recipes[@ 0][@ 3] = 60 * scr_get_mouse_level();
 				button_update_ref_list[|0 ].crafting_time = Recipes[@ 0][@ 3];
@@ -216,18 +216,19 @@ if (menu_drawn) {
 					i++;
 				}
 				//Crafting buttons
+
 				_button = instance_create_layer(_top_left_x + (.24 * _width), _top_left_y + (.62 * _height), "UI", obj_craft_button)
 				ds_list_add(button_ref_list, _button)
 				
+				if !(dynamic) {
+					_button = instance_create_layer(_top_left_x + (.03 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
+						_button.left = true;
+					ds_list_add(button_ref_list, _button)
 				
-				_button = instance_create_layer(_top_left_x + (.03 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
-					_button.left = true;
-				ds_list_add(button_ref_list, _button)
 				
-				
-				_button = instance_create_layer(_top_left_x + (.78 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
-				ds_list_add(button_ref_list, _button)
-				
+					_button = instance_create_layer(_top_left_x + (.78 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
+					ds_list_add(button_ref_list, _button)
+				}
 				
 				crafting_menu_drawn = true;
 			}
