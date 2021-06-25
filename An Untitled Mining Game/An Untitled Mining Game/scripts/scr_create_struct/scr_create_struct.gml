@@ -17,6 +17,15 @@ with _struct {
 		case struct.mouse_tool:	
 			draw_spr = spr_struct_mouse_level_station;
 			draw_menu = menu_type.mouse_tool;
+			break;
+		case struct.workbench:	
+			draw_spr = spr_struct_workbench;
+			draw_menu = menu_type.furnace; //TODO
+			break;
+		case struct.anvil:	
+			draw_spr = spr_struct_anvil;
+			draw_menu = menu_type.furnace; //TODO
+			break;
 		
 	}
 }

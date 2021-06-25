@@ -45,6 +45,8 @@ enum struct {
 	furnace,
 	mouse_tool,
 	points_shop,
+	workbench,
+	anvil,
 	height
 }
 

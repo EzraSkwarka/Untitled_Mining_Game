@@ -108,9 +108,20 @@ name_array = [
 ]
 
 //randomly fill inventory for testing
-var ii = 0; repeat(inv_slots){
-	ds_inventory[# 0, ii] = irandom_range(1, 3);
-	ds_inventory[# 1, ii] = irandom_range(1, 10);
-	
-	ii += 1;
+if false {
+	var ii = 0; repeat(inv_slots){
+		ds_inventory[# 0, ii] = irandom_range(1, 3);
+		ds_inventory[# 1, ii] = irandom_range(1, 10);
+		
+		ii += 1;
+	}
 }
+
+ds_inventory[# 0, 0] = item.wood;
+ds_inventory[# 1, 0] = 350;
+ds_inventory[# 0, 1] = item.iron_ingot;
+ds_inventory[# 1, 1] = 5;
+ds_inventory[# 0, 2] = item.rock;
+ds_inventory[# 1, 2] = 50;
+ds_inventory[# 0, 3] = item.shiny_rock;
+ds_inventory[# 1, 3] = 50;

@@ -40,6 +40,20 @@ if (!building) {
 			col_width = 24;
 			col_height = 18;
 			break;
+		case struct.workbench:
+			active_sprite = spr_struct_workbench;
+			active_object = struct.workbench;
+			required_mats = [item.wood, 25];
+			col_width = 27;
+			col_height = 19;
+			break;
+		case struct.anvil:
+			active_sprite = spr_struct_anvil;
+			active_object = struct.anvil;
+			required_mats = [item.wood, 10, item.iron_ingot, 5];
+			col_width = 21;
+			col_height = 15;
+			break;
 		
 		default:
 			exit;

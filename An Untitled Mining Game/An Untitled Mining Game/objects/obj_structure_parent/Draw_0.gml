@@ -6,7 +6,8 @@ draw_set_colour($FFFFFFFF & $ffffff);
 var l1AF7C74B_0=($FFFFFFFF >> 24);
 draw_set_alpha(l1AF7C74B_0 / $ff);
 
-draw_text(x + 8, y + 8,  + string(structure_level));
-
+if (structure_level > 0) {
+	draw_text(x + 8, y + 8,  + string(structure_level));
+}
 //Timed delay and thermo
 scr_show_and_craft(id);
