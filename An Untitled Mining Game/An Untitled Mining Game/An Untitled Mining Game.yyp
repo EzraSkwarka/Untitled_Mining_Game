@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"fnt_Omom_solid_18","path":"fonts/fnt_Omom_solid_18/fnt_Omom_solid_18.yy",},"order":10,},
     {"id":{"name":"scr_get_hover","path":"scripts/scr_get_hover/scr_get_hover.yy",},"order":0,},
     {"id":{"name":"spr_node_tree","path":"sprites/spr_node_tree/spr_node_tree.yy",},"order":1,},
     {"id":{"name":"scr_have_mats","path":"scripts/scr_have_mats/scr_have_mats.yy",},"order":3,},
@@ -44,7 +45,6 @@
     {"id":{"name":"spr_node_rock_coral","path":"sprites/spr_node_rock_coral/spr_node_rock_coral.yy",},"order":1,},
     {"id":{"name":"spr_water_tile","path":"sprites/spr_water_tile/spr_water_tile.yy",},"order":4,},
     {"id":{"name":"spr_mat_shiny_pebble","path":"sprites/spr_mat_shiny_pebble/spr_mat_shiny_pebble.yy",},"order":1,},
-    {"id":{"name":"Font6","path":"fonts/Font6/Font6.yy",},"order":5,},
     {"id":{"name":"scr_save_game","path":"scripts/scr_save_game/scr_save_game.yy",},"order":1,},
     {"id":{"name":"spr_forest_tile","path":"sprites/spr_forest_tile/spr_forest_tile.yy",},"order":6,},
     {"id":{"name":"obj_tile_water","path":"objects/obj_tile_water/obj_tile_water.yy",},"order":1,},
@@ -67,6 +67,7 @@
     {"id":{"name":"fnt_Omom_24","path":"fonts/fnt_Omom_24/fnt_Omom_24.yy",},"order":4,},
     {"id":{"name":"spr_blue_craft_button","path":"sprites/spr_blue_craft_button/spr_blue_craft_button.yy",},"order":4,},
     {"id":{"name":"spr_mob_slime_jump","path":"sprites/spr_mob_slime_jump/spr_mob_slime_jump.yy",},"order":3,},
+    {"id":{"name":"fnt_Omom_18","path":"fonts/fnt_Omom_18/fnt_Omom_18.yy",},"order":9,},
     {"id":{"name":"scr_create_struct","path":"scripts/scr_create_struct/scr_create_struct.yy",},"order":1,},
     {"id":{"name":"scr_mob_left_click","path":"scripts/scr_mob_left_click/scr_mob_left_click.yy",},"order":2,},
     {"id":{"name":"spr_brown_button_base","path":"sprites/spr_brown_button_base/spr_brown_button_base.yy",},"order":3,},
