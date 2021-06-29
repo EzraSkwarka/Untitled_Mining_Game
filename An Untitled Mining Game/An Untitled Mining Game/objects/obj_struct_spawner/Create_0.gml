@@ -13,8 +13,6 @@ solid_objects = [
 	obj_node_parent,
 	obj_mob_parent,
 	obj_structure_parent
-
-
 ]
 
 

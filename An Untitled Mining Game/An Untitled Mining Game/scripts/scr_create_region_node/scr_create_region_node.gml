@@ -128,7 +128,7 @@ switch node_type {
 		
 	case node_types.rock_coal:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 2;
+		node._health = 3;
 		node.spr_to_draw = spr_node_rock_coal;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.coal, 5];
@@ -137,7 +137,7 @@ switch node_type {
 		
 	case node_types.rock_iron:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 4;
+		node._health = 6;
 		node.spr_to_draw = spr_node_rock_iron;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.iron_ore, 2];
@@ -155,7 +155,7 @@ switch node_type {
 		
 	case node_types.rock_mythril:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 10;
+		node._health = 32;
 		node.spr_to_draw = spr_node_rock_mythril;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.mythril_ore, 2];
@@ -164,7 +164,7 @@ switch node_type {
 		
 	case node_types.rock_steel:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 8;
+		node._health = 20;
 		node.spr_to_draw = spr_node_rock_steel;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.steel_ore, 2];
@@ -173,7 +173,7 @@ switch node_type {
 		
 	case node_types.rock_sandstone:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 6;
+		node._health = 12;
 		node.spr_to_draw = spr_node_rock_sandstone;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.copper_ore, 2];
@@ -182,7 +182,7 @@ switch node_type {
 		
 	case node_types.rock_uranium:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 14;
+		node._health = 60;
 		node.spr_to_draw = spr_node_rock_uranium;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.uranium_ore, 2];
@@ -191,7 +191,7 @@ switch node_type {
 		
 	case node_types.rock_molten:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 20;
+		node._health = 120;
 		node.spr_to_draw = spr_node_rock_molten;
 		node.tool_to_use = tools.pickaxe;
 		node.drop_array = [item.molten_ore, 2];
@@ -200,7 +200,7 @@ switch node_type {
 		
 	case node_types.tree:
 		var node = instance_create_layer(x, y, "Active", obj_node_parent);
-		node._health = 1;
+		node._health = 5;
 		node.spr_to_draw = spr_node_tree;
 		node.tool_to_use = tools.axe;
 		node.drop_array = [item.wood, 5];
