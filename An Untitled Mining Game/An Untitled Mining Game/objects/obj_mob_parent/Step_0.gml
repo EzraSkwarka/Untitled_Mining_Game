@@ -1,4 +1,4 @@
-if global.is_paused exit;
+//if global.is_paused exit;
 
 script_execute(states_array[@ state], id);
 

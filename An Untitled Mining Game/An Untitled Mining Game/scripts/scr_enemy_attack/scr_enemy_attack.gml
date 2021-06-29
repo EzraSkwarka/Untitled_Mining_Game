@@ -2,7 +2,7 @@
 // // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_enemy_attack(_self) 
 {
-if global.is_paused exit;	
+//if global.is_paused exit;	
 
 with (_self) {
 switch(mob_type) {

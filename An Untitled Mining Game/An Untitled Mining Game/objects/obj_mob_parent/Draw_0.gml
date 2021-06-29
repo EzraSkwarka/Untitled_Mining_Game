@@ -1,4 +1,4 @@
-if global.is_paused exit;
+//if global.is_paused exit;
 
 draw_sprite(sprite_index, image_index, x, y);
 mask_index = sprite_index;

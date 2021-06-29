@@ -13,7 +13,7 @@ if struct_id.in_use and (struct_id.current_step < struct_id.wait_time) {
 		struct_id.current_step = 0;
 		
 		//Level Up Struct
-			if (struct_id.output[@ 0] == "Level up") { // needs to recalc input
+			if (struct_id.output[@ 0] == "Level up") {
 				struct_id.structure_level += 1;
 			
 		//Renown Shop and Relics
@@ -28,28 +28,31 @@ if struct_id.in_use and (struct_id.current_step < struct_id.wait_time) {
 				}
 		//Enhance Pick
 			} else if (struct_id.output[@ 0] == "Pick Power") {
-				switch (struct_id.output[@ 1]) {
-					case item.coral:
-						obj_tool.pick_power += .01;
-						break;
-					case item.iron_ingot:
-						obj_tool.pick_power += .02;
-						break;
-					case item.copper_ingot:
-						obj_tool.pick_power += .04;
-						break;
-					case item.steel_ingot:
-						obj_tool.pick_power += .08;
-						break;
-					case item.mythril_ingot:
-						obj_tool.pick_power += .16;
-						break;
-					case item.uranium_ingot:
-						obj_tool.pick_power += .32;
-						break;
-					case item.molten_ingot:
-						obj_tool.pick_power += .64;
-						break;
+				var repeat_count = max(((6 * struct_id.structure_level)) div struct_id.base_speed, 1);
+				repeat repeat_count {
+					switch (struct_id.output[@ 1]) {
+						case item.coral:
+							obj_tool.pick_power += .01;
+							break;
+						case item.iron_ingot:
+							obj_tool.pick_power += .02;
+							break;
+						case item.copper_ingot:
+							obj_tool.pick_power += .04;
+							break;
+						case item.steel_ingot:
+							obj_tool.pick_power += .08;
+							break;
+						case item.mythril_ingot:
+							obj_tool.pick_power += .16;
+							break;
+						case item.uranium_ingot:
+							obj_tool.pick_power += .32;
+							break;
+						case item.molten_ingot:
+							obj_tool.pick_power += .64;
+							break;
+					}
 				}
 		//Normal
 			} else {
