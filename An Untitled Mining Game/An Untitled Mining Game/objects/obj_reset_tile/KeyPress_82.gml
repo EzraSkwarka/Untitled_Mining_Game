@@ -14,6 +14,9 @@ if(place_meeting(x, y, obj_player)) {
 	with (obj_structure_parent) {
 		total_count += (2 * structure_level);
 	}
+	
+	total_count += 8 * min(0, (obj_tool.pick_power - 1));
+	obj_tool.pick_power = 0;
 
 	obj_NodeController.nodes_spawned = 0;
 	obj_NodeController.node_region_spawns =	[0, 0, 0, 0, 0, 0, 0];
