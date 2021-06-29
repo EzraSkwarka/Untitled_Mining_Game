@@ -17,7 +17,9 @@ enum menu_type {
 	none,
 	furnace,
 	mouse_tool,
-	points_shop
+	points_shop,
+	anvil,
+	workbench
 }
 
 //Crafting Info

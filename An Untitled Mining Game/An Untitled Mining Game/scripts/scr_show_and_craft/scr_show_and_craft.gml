@@ -26,7 +26,9 @@ if struct_id.in_use and (struct_id.current_step < struct_id.wait_time) {
 						obj_relics_menu.bonus_inv_slots += 1;
 						break;
 				}
-				
+		//Enhance Pick
+			} else if (struct_id.output[@ 0] == "Pick Power") {
+				obj_tool.pick_power += .5;
 		//Normal
 			} else {
 				var i = 0; repeat (array_length(struct_id.output)/2) {

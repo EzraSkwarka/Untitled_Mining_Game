@@ -85,6 +85,9 @@ var i = 0; repeat(array_length(node_type_array)) {
 					save_entity.i_frames = i_frames;
 					save_entity.i_frames_remaning = i_frames_remaning;
 					break;
+				case "obj_tool":
+					save_entity.pick_power = pick_power;
+					break
 				//-----Inventory
 				case "obj_inventory":
 					save_entity.layer = "UI";

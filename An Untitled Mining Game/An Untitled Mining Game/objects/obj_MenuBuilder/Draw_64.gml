@@ -153,26 +153,48 @@ switch (menu_to_draw) {
 			}
 			_i++;
 		}
+		
+		
+	}
+	break;
+	
+	case menu_type.anvil:
+	if !(menu_drawn) {
+		Recipes = [
+		//Renown -> Pick Power, 600 tics
+			["Enchance Pickaxe: Coral", [item.coral, 1], ["Pick Power", item.coral], 60,
+				"Coral Enhancment", "", true],
+		];
+		
+		var _button_count = array_length(Recipes);
+		var _width = 256;
+		var _height = 32;
+		var _h_space = 8;
+		var _i = 0;
+			
+		// Background
+		var _background = scr_static_background_button(spr_brown_button_base, (screen_width / 2) - (.6 * _width), 70,
+														(1.2 * _width), (_button_count * (_height + _h_space) + 150))
+			ds_list_add(button_ref_list, _background)
+		
+		//Buttons
+		var _button;
+		repeat(_button_count) {
+			_button = scr_create_crafting_button(screen_width/2 -  _width/2, 100 + (_height + _h_space) * _i, _width, _height, 
+									Recipes[_i], struct_refrence);					
+			ds_list_add(button_ref_list, _button)
+			if Recipes[_i][6] {
+				ds_list_add(button_update_ref_list, _button)	
+			}
+			_i++;
+		}
 		//Level Up Button
 			//This Struct doesn't have a level
 				
 		menu_drawn = true;
 	}
 	//Update Dynamic Inputs
-		//Pick Power
-			//Cost
-			Recipes[@ 0][@ 1][@ 1] = floor(power(1.1, obj_relics_menu.pick_power));
-				button_update_ref_list[| 0].input = Recipes[@ 0][@ 1];
-			//Time
-			Recipes[@ 0][@ 3] = 300 * obj_relics_menu.pick_power;
-				button_update_ref_list[| 0].crafting_time = Recipes[@ 0][@ 3];
-		//Inventory Slots
-			//Cost
-			Recipes[@ 1][@ 1][@ 1] = floor(power(1.1, obj_relics_menu.bonus_inv_slots));
-				button_update_ref_list[| 0].input = Recipes[@ 0][@ 1];
-			//Time
-			Recipes[@ 1][@ 3] = 300 * obj_relics_menu.bonus_inv_slots;
-				button_update_ref_list[| 0].crafting_time = Recipes[@ 0][@ 3];
+
 
 	break
 	

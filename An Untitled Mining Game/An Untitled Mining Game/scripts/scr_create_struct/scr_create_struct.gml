@@ -24,7 +24,7 @@ with _struct {
 			break;
 		case struct.anvil:	
 			draw_spr = spr_struct_anvil;
-			draw_menu = menu_type.furnace; //TODO
+			draw_menu = menu_type.anvil; 
 			break;
 		
 	}

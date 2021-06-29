@@ -151,6 +151,12 @@ if (file_exists("savegame.sav")) {
 						i_frames_remaning = load_entity.i_frames_remaning; }
 					break;
 					#endregion
+				case "obj_tool":
+					#region tool
+					if (variable_instance_exists(load_entity, "pick_power")) {
+						pick_power = load_entity.pick_power; }
+					break
+					#endregion
 					//-----Inventory
 					case "obj_inventory":
 					#region

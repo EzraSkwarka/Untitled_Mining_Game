@@ -7,6 +7,7 @@ nta = [
 	obj_item,
 	obj_structure_parent, 
 	obj_player,
+	obj_tool,
 	obj_inventory,
 	obj_NodeController,
 	obj_relics_menu

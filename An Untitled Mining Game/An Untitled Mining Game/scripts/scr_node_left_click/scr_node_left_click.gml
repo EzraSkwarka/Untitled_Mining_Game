@@ -17,7 +17,7 @@ function scr_node_left_click(_self)
 		if !is_swinging {
 			if (distance_to_object(obj_player) <= 16) {
 				if (_self._health > 0) {
-					_self._health -= obj_relics_menu.pick_power;
+					_self._health -= (obj_relics_menu.pick_power + obj_tool.pick_power);
 				} 
 		
 				if (_self._health <= 0) {
