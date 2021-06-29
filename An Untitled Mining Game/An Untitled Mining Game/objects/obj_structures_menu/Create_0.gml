@@ -1,9 +1,36 @@
+enum struct {
+	none,
+	furnace,
+	mouse_tool,
+	points_shop,
+	workbench,
+	anvil,
+	height
+}
+
+struct_data_array = [
+	//Template
+		//Name
+			//[active_sprite, active_object, required_mats, colwidth, col_height],
+
+	//Furnace
+		[spr_struct_furnace, struct.furnace, [item.rock, 10], 30, 22],
+	//Mouse Tool
+		[spr_struct_mouse_level_station, struct.mouse_tool, [item.shiny_rock, 10], 22, 29],
+	//Points Shop
+		[spr_struct_points_shop, struct.points_shop, [item.wood, 50], 24, 18], 
+	//Workbench
+		[spr_struct_workbench, struct.workbench, [item.wood, 25], 27, 19],
+	//Anvil
+		[spr_struct_anvil, struct.anvil, [item.wood, 10, item.iron_ingot, 5], 21, 15], 
+]
+
 show_structures_menu = false;
 depth = -1;
 scale = 2;
 show_inventory = false;
 
-inv_slots = 6;
+inv_slots = struct.height - 1;
 inv_slots_width = 8;
 inv_slots_height = 3;
 
@@ -39,37 +66,7 @@ slots_x = info_x;
 slots_y = inv_UI_y + (40 * scale);
 
 
-//---------Items
-enum struct {
-	none,
-	furnace,
-	mouse_tool,
-	points_shop,
-	workbench,
-	anvil,
-	height
-}
 
-struct_data_array = [
-	//Template
-		//Name
-		//[active_sprite, active_object, required_mats, colwidth, col_height],
-
-	//Furnace
-	[spr_struct_furnace, struct.furnace, [item.rock, 10], 30, 22],
-	
-	//Mouse Tool
-	[spr_struct_mouse_level_station, struct.mouse_tool, [item.shiny_rock, 10], 22, 29],
-	
-	//Points Shop
-	[spr_struct_points_shop, struct.points_shop, [item.wood, 50], 24, 18], 
-	
-	//Workbench
-	[spr_struct_workbench, struct.workbench, [item.wood, 25], 27, 19],
-	
-	//Anvil
-	[spr_struct_anvil, struct.anvil, [item.wood, 10, item.iron_ingot, 5], 21, 15], 
-]
 
 ds_struct_menu = ds_grid_create(2, inv_slots);
 

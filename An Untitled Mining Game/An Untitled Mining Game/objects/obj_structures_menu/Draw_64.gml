@@ -51,9 +51,9 @@ repeat(inv_slots){
 			draw_sprite_part_ext(spr_inv_UI, 0, 0, 0, cell_size, cell_size, xx, yy, scale, scale, c_white, .3);
 			gpu_set_blendmode(bm_normal);
 			
-			//recipe
+			//recipe, iitem is one greater the the matching array in struct_data_array
 			draw_set_font(fnt_basic)
-			draw_text(0,0, string(iitem))
+			draw_text(370, 600, scr_mat_array_to_text(struct_data_array[iitem - 1][ 2]));
 		break;
 		
 		case pickup_slot:
@@ -70,6 +70,7 @@ repeat(inv_slots){
 	
 	//Draw item Number
 	if(iitem > 0){
+		draw_set_font(fnt_basic)
 		var number = inv_grid[# 1, ii];
 		var c = c_white;
 		draw_text_color(xx, yy, string(number), c,c,c,c, 1);
