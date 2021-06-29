@@ -1,3 +1,7 @@
+//Moving to only one tool so...
+exit;
+
+
 if (global.is_paused) exit;
 
 var i = 0; repeat (2) {

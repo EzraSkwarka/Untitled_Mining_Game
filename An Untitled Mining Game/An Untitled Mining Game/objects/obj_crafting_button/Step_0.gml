@@ -12,5 +12,6 @@ if (_hover and click) {
 	obj_MenuBuilder.crafting_time = crafting_time;
 	obj_MenuBuilder.dynamic = dynamic;
 	obj_MenuBuilder.draw_craft = true;
+	obj_MenuBuilder.redraw = true;
 	
 }

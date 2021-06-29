@@ -153,9 +153,26 @@ switch (menu_to_draw) {
 			}
 			_i++;
 		}
-		
-		
+		//Level Up Button
+			//This Struct doesn't have a level
+				
+		menu_drawn = true;
 	}
+	//Update Dynamic Inputs
+		//Pick Power
+			//Cost
+			Recipes[@ 0][@ 1][@ 1] = floor(power(1.1, obj_relics_menu.pick_power));
+				button_update_ref_list[| 0].input = Recipes[@ 0][@ 1];
+			//Time
+			Recipes[@ 0][@ 3] = 300 * obj_relics_menu.pick_power;
+				button_update_ref_list[| 0].crafting_time = Recipes[@ 0][@ 3];
+		//Inventory Slots
+			//Cost
+			Recipes[@ 1][@ 1][@ 1] = floor(power(1.1, obj_relics_menu.bonus_inv_slots));
+				button_update_ref_list[| 0].input = Recipes[@ 0][@ 1];
+			//Time
+			Recipes[@ 1][@ 3] = 300 * obj_relics_menu.bonus_inv_slots;
+				button_update_ref_list[| 0].crafting_time = Recipes[@ 0][@ 3];
 	break;
 	
 	case menu_type.anvil:
@@ -163,30 +180,33 @@ switch (menu_to_draw) {
 		Recipes = [
 		//Coral -> Pick Power (temp), 60 tics
 			["Enchance Pickaxe: Coral", [item.coral, 1], ["Pick Power", item.coral], 60,
-				"Coral Enhancment", "", true],
+				"Coral Enhancment", "", 0],
 		//Iron Bar -> Pick Power (temp), 120 tics
 			["Enchance Pickaxe: Iron", [item.iron_ingot, 1], ["Pick Power", item.iron_ingot], 120,
-				"Iron Enhancment", "", true],
+				"Iron Enhancment", "", 0],
 		//Copper Bar -> Pick Power (temp), 240 tics
 			["Enchance Pickaxe: Copper", [item.copper_ingot, 1], ["Pick Power", item.copper_ingot], 240,
-				"Copper Enhancment", "", true],
+				"Copper Enhancment", "", 0],
 		//Steel Bar -> Pick Power (temp), 480 tics
 			["Enchance Pickaxe: Steel", [item.steel_ingot, 1], ["Pick Power", item.steel_ingot], 480,
-				"Steel Enhancment", "", true],
+				"Steel Enhancment", "", 0],
 		//Mythril Bar -> Pick Power (temp), 960 tics
 			["Enchance Pickaxe: Mythril", [item.mythril_ingot, 1], ["Pick Power", item.mythril_ingot], 960,
-				"Mythril Enhancment", "", true],
+				"Mythril Enhancment", "", 0],
 		//Uranium Bar -> Pick Power (temp), 1800 tics
 			["Enchance Pickaxe: Uranium", [item.uranium_ingot, 1], ["Pick Power", item.uranium_ingot], 1800,
-				"Uranium Enhancment", "", true],
+				"Uranium Enhancment", "", 0],
 		//Molten Bar -> Pick Power (temp), 3600 tics
 			["Enchance Pickaxe: Molten", [item.molten_ingot, 1], ["Pick Power", item.molten_ingot], 3600,
-				"Molten Enhancment", "", true],
+				"Molten Enhancment", "", 0],
+		//Level Up Button
+			["Level Up", [item.shiny_rock, floor(power(1.1, struct_refrence.structure_level))], ["Level up", ""], 60,
+				"Level Up", "", true],
 
 				
 			];
 		
-		var _button_count = array_length(Recipes);
+		var _button_count = array_length(Recipes) - 1;
 		var _width = 256;
 		var _height = 32;
 		var _h_space = 8;
@@ -209,14 +229,16 @@ switch (menu_to_draw) {
 			_i++;
 		}
 		//Level Up Button
-			//This Struct doesn't have a level
+			_button = scr_create_crafting_button(screen_width/2 -  _width/2, 100 + (_height + _h_space) * _i, _width, _height, 
+									Recipes[array_length(Recipes) - 1], struct_refrence);
+			ds_list_add(button_ref_list, _button)
+			ds_list_add(button_update_ref_list, _button)
 				
 		menu_drawn = true;
 	}
 	//Update Dynamic Inputs
 
-
-	break
+	break;
 	
 	
 	case menu_type.none: // this means only one "type" of menu can be active at a time
@@ -257,8 +279,12 @@ if (menu_drawn) {
 					}
 					i++;
 				}
+				
+				//Background
+				var _button = scr_static_background_button(spr_brown_button_base, _top_left_x, _top_left_y, _width, _height);
+				ds_list_add(button_ref_list, _button)
+				
 				//Crafting buttons
-
 				_button = instance_create_layer(_top_left_x + (.24 * _width), _top_left_y + (.62 * _height), "UI", obj_craft_button)
 				ds_list_add(button_ref_list, _button)
 				
@@ -272,11 +298,44 @@ if (menu_drawn) {
 					ds_list_add(button_ref_list, _button)
 				}
 				
+				
+				
 				crafting_menu_drawn = true;
 			}
-		//Background
-			var _button = scr_static_background_button(spr_brown_button_base, _top_left_x, _top_left_y, _width, _height);
-			ds_list_add(button_ref_list, _button)
+
+			if redraw {
+				var _i = ds_list_size(button_ref_list);
+				//delete old arrows
+					with(button_ref_list[| _i - 1]) {
+						instance_destroy();
+					}
+					with(button_ref_list[| _i - 2]) {
+						instance_destroy();
+					}
+					//delete old craft button
+					with(button_ref_list[| _i - 2]) {
+						instance_destroy();
+					}
+				//Background
+				var _button = scr_static_background_button(spr_brown_button_base, _top_left_x, _top_left_y, _width, _height);
+				ds_list_add(button_ref_list, _button)
+				
+				//Crafting buttons
+				_button = instance_create_layer(_top_left_x + (.24 * _width), _top_left_y + (.62 * _height), "UI", obj_craft_button)
+				ds_list_add(button_ref_list, _button)
+				
+				if !(dynamic) {
+					_button = instance_create_layer(_top_left_x + (.03 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
+						_button.left = true;
+					ds_list_add(button_ref_list, _button)
+				
+				
+					_button = instance_create_layer(_top_left_x + (.78 * _width), _top_left_y + (.63 * _height), "UI", obj_arrow_button)
+					ds_list_add(button_ref_list, _button)
+				}
+				
+				redraw = false;
+			}
 			
 		// Recipie Info			
 			draw_set_color(c_white);

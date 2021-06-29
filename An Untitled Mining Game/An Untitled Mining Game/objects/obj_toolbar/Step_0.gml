@@ -1,3 +1,7 @@
+//Moving to only one tool so...
+exit;
+
+//Begin
 if global.is_paused exit;
 
 if mouse_wheel_up() {equiped_tool += -1;} 
