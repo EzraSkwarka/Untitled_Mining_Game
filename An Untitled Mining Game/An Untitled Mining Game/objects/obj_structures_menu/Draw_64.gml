@@ -50,6 +50,10 @@ repeat(inv_slots){
 			gpu_set_blendmode(bm_add);
 			draw_sprite_part_ext(spr_inv_UI, 0, 0, 0, cell_size, cell_size, xx, yy, scale, scale, c_white, .3);
 			gpu_set_blendmode(bm_normal);
+			
+			//recipe
+			draw_set_font(fnt_basic)
+			draw_text(0,0, string(iitem))
 		break;
 		
 		case pickup_slot:

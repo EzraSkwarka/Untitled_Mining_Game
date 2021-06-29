@@ -17,6 +17,7 @@ solid_objects = [
 
 ]
 
+
 //scr_create_struct_type("Pebble Reffiner", obj_structure_pebble_refiner, [item.rock, 10]);
 //scr_create_struct_type("Mouse Tool", obj_structure_mouse_tool, [item.shiny_rock, 10]);
 

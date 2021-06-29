@@ -18,46 +18,12 @@ if (!building) {
 	mousey = mouse_y;
 	
 	// Determine active struct
-	switch (selected_struct) {
-		case struct.furnace:
-			active_sprite = spr_struct_furnace;
-			active_object = struct.furnace
-			required_mats = [item.rock, 10];
-			col_width = 30;
-			col_height = 22;
-			break;
-		case struct.mouse_tool:
-			active_sprite = spr_struct_mouse_level_station;
-			active_object = struct.mouse_tool;
-			required_mats = [item.shiny_rock, 10];
-			col_width = 22;
-			col_height = 29;
-			break;
-		case struct.points_shop:
-			active_sprite = spr_struct_points_shop;
-			active_object = struct.points_shop;
-			required_mats = [item.wood, 50];
-			col_width = 24;
-			col_height = 18;
-			break;
-		case struct.workbench:
-			active_sprite = spr_struct_workbench;
-			active_object = struct.workbench;
-			required_mats = [item.wood, 25];
-			col_width = 27;
-			col_height = 19;
-			break;
-		case struct.anvil:
-			active_sprite = spr_struct_anvil;
-			active_object = struct.anvil;
-			required_mats = [item.wood, 10, item.iron_ingot, 5];
-			col_width = 21;
-			col_height = 15;
-			break;
+	active_sprite = obj_structures_menu.struct_data_array[ selected_struct - 1][ 0];
+	active_object = obj_structures_menu.struct_data_array[ selected_struct - 1][ 1];
+	required_mats = obj_structures_menu.struct_data_array[ selected_struct - 1][ 2];
+	col_width =		obj_structures_menu.struct_data_array[ selected_struct - 1][ 3];
+	col_height =	obj_structures_menu.struct_data_array[ selected_struct - 1][ 4];
 		
-		default:
-			exit;
-	}
 	
 	//Determine if area is clear
 	var cH = cellHeight;
