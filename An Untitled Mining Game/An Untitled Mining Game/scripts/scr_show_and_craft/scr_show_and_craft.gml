@@ -28,7 +28,29 @@ if struct_id.in_use and (struct_id.current_step < struct_id.wait_time) {
 				}
 		//Enhance Pick
 			} else if (struct_id.output[@ 0] == "Pick Power") {
-				obj_tool.pick_power += .5;
+				switch (struct_id.output[@ 1]) {
+					case item.coral:
+						obj_tool.pick_power += .01;
+						break;
+					case item.iron_ingot:
+						obj_tool.pick_power += .02;
+						break;
+					case item.copper_ingot:
+						obj_tool.pick_power += .04;
+						break;
+					case item.steel_ingot:
+						obj_tool.pick_power += .08;
+						break;
+					case item.mythril_ingot:
+						obj_tool.pick_power += .16;
+						break;
+					case item.uranium_ingot:
+						obj_tool.pick_power += .32;
+						break;
+					case item.molten_ingot:
+						obj_tool.pick_power += .64;
+						break;
+				}
 		//Normal
 			} else {
 				var i = 0; repeat (array_length(struct_id.output)/2) {

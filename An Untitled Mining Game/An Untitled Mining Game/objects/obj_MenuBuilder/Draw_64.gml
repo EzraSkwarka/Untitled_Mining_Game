@@ -161,10 +161,30 @@ switch (menu_to_draw) {
 	case menu_type.anvil:
 	if !(menu_drawn) {
 		Recipes = [
-		//Renown -> Pick Power, 600 tics
+		//Coral -> Pick Power (temp), 60 tics
 			["Enchance Pickaxe: Coral", [item.coral, 1], ["Pick Power", item.coral], 60,
 				"Coral Enhancment", "", true],
-		];
+		//Iron Bar -> Pick Power (temp), 120 tics
+			["Enchance Pickaxe: Iron", [item.iron_ingot, 1], ["Pick Power", item.iron_ingot], 120,
+				"Iron Enhancment", "", true],
+		//Copper Bar -> Pick Power (temp), 240 tics
+			["Enchance Pickaxe: Copper", [item.copper_ingot, 1], ["Pick Power", item.copper_ingot], 240,
+				"Copper Enhancment", "", true],
+		//Steel Bar -> Pick Power (temp), 480 tics
+			["Enchance Pickaxe: Steel", [item.steel_ingot, 1], ["Pick Power", item.steel_ingot], 480,
+				"Steel Enhancment", "", true],
+		//Mythril Bar -> Pick Power (temp), 960 tics
+			["Enchance Pickaxe: Mythril", [item.mythril_ingot, 1], ["Pick Power", item.mythril_ingot], 960,
+				"Mythril Enhancment", "", true],
+		//Uranium Bar -> Pick Power (temp), 1800 tics
+			["Enchance Pickaxe: Uranium", [item.uranium_ingot, 1], ["Pick Power", item.uranium_ingot], 1800,
+				"Uranium Enhancment", "", true],
+		//Molten Bar -> Pick Power (temp), 3600 tics
+			["Enchance Pickaxe: Molten", [item.molten_ingot, 1], ["Pick Power", item.molten_ingot], 3600,
+				"Molten Enhancment", "", true],
+
+				
+			];
 		
 		var _button_count = array_length(Recipes);
 		var _width = 256;
